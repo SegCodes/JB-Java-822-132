@@ -11,9 +11,9 @@ public class Exe5 {
 			int sSum = 0;
 			System.out.printf("Student #%d's grades:\t", i);
 			for(int j = 0; j < cLass[i].length; j++) {
-				int g = (int)(Math.random()*101);
-				sSum += g;
-				System.out.print(g +"\t");
+				cLass[i][j] = (int)(Math.random()*101);
+				sSum += cLass[i][j];
+				System.out.print(cLass[i][j] +"\t");
 			}
 			cSum += sSum;
 			System.out.println();
