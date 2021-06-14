@@ -29,9 +29,9 @@ public class Exe3 {
 			l++;
 		}
 		
-		System.out.println(l);
+		//System.out.println(l);
 		
-		//Rearranging organized array size
+		//Adjusting organized array size
 		int[] arrt = new int[l];
 		System.arraycopy(arr2, 0, arrt, 0, l);
 		arr2 = arrt;
