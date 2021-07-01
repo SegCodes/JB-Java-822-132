@@ -8,7 +8,7 @@ public abstract class Client {
 	private Account[] accounts = new Account[5];
 	protected float commission_rate;
 	protected float interest_rate;
-	private Logger logger;
+	private Logger logger = new Logger(null);
 	
 	public Client(int id, String name, float balance) {
 		this.id = id;
@@ -44,7 +44,7 @@ public abstract class Client {
 		for(int i = 0; i < this.accounts.length; i++) {
 			if(this.accounts[i] == null) {
 				this.accounts[i] = a;
-				Logger.log(new Log(System.currentTimeMillis(),a.getId(), "Account added", a.getBalance()));
+				Logger.log(new Log(System.currentTimeMillis(),this.getId(), "Account added", a.getBalance()));
 				break;
 			}
 		}
@@ -61,7 +61,7 @@ public abstract class Client {
 	public void removeAccount(Account a) {
 		for(int i = 0; i < this.accounts.length; i++) {
 			if(this.accounts[i].equals(a.getId())) {
-				Logger.log(new Log(System.currentTimeMillis(), a.getId(), "Account removed", a.getBalance()));
+				Logger.log(new Log(System.currentTimeMillis(), this.getId(), "Account removed", a.getBalance()));
 				this.balance += a.getBalance();
 				this.accounts[i] = null;
 				break;
@@ -81,7 +81,7 @@ public abstract class Client {
 	public void autoUpdateAccounts() {
 		for(int i = 0; i < this.accounts.length; i++) {
 			this.accounts[i].setBalance(this.accounts[i].getBalance()*(1+this.interest_rate));
-			Logger.log(new Log(System.currentTimeMillis(), this.accounts[i].getId(), "Account auto update", this.accounts[i].getBalance()*this.interest_rate));
+			Logger.log(new Log(System.currentTimeMillis(), this.getId(), "Account auto update", this.accounts[i].getBalance()*this.interest_rate));
 		}
 	}
 	
