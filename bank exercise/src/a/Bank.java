@@ -29,7 +29,7 @@ public class Bank {
 		for(int i = 0; i < this.clients.length; i++) {
 			if(this.clients[i] == null) {
 				this.clients[i] = c;
-				Logger.log(new Log(0, this.clients[i].getId(), "Client added", this.clients[i].getBalance()));
+				Logger.log(new Log(System.currentTimeMillis(), this.clients[i].getId(), "Client added", this.clients[i].getBalance()));
 				break;
 			}
 		}
@@ -38,7 +38,7 @@ public class Bank {
 	public void removeClient(Client c) {
 		for(int i = 0; i < this.clients.length; i++) {
 			if(this.clients[i].equals(c)) {
-				Logger.log(new Log(0, this.clients[i].getId(), "Client removed", this.clients[i].getFortune()));
+				Logger.log(new Log(System.currentTimeMillis(), this.clients[i].getId(), "Client removed", this.clients[i].getFortune()));
 				this.clients[i] = null;
 				break;
 			}

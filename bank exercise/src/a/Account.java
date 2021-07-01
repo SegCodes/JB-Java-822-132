@@ -15,7 +15,7 @@ public class Account {
 	}
 
 	public void setBalance(float balance) {
-		Logger.log(new Log(0, this.id, "Balance changed", balance-this.balance));
+		Logger.log(new Log(System.currentTimeMillis(), this.id, "Balance changed", balance-this.balance));
 		this.balance = balance;
 		
 	}
