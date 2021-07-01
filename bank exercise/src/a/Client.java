@@ -44,16 +44,18 @@ public abstract class Client {
 		for(int i = 0; i < this.accounts.length; i++) {
 			if(this.accounts[i] == null) {
 				this.accounts[i] = a;
-				Logger.log(new Log(System.currentTimeMillis(),this.getId(), "Account added", a.getBalance()));
-				break;
+				Logger.log(new Log(System.currentTimeMillis(),this.id, "Account added", a.getBalance()));
+				return;
 			}
 		}
+		System.out.println("Account Addition failed: Array is full for Client " + this.id);
 	}
 	
 	public Account getAccount(int index) {
 		if(this.accounts[index] != null) {
 			return this.accounts[index];
 		}else {
+			System.out.println("No account in index " + index + " exists.");
 			return null;
 		}
 	}
@@ -61,7 +63,7 @@ public abstract class Client {
 	public void removeAccount(Account a) {
 		for(int i = 0; i < this.accounts.length; i++) {
 			if(this.accounts[i].equals(a.getId())) {
-				Logger.log(new Log(System.currentTimeMillis(), this.getId(), "Account removed", a.getBalance()));
+				Logger.log(new Log(System.currentTimeMillis(), this.id, "Account removed", a.getBalance()));
 				this.balance += a.getBalance();
 				this.accounts[i] = null;
 				break;
@@ -81,7 +83,7 @@ public abstract class Client {
 	public void autoUpdateAccounts() {
 		for(int i = 0; i < this.accounts.length; i++) {
 			this.accounts[i].setBalance(this.accounts[i].getBalance()*(1+this.interest_rate));
-			Logger.log(new Log(System.currentTimeMillis(), this.getId(), "Account auto update", this.accounts[i].getBalance()*this.interest_rate));
+			Logger.log(new Log(System.currentTimeMillis(), this.id, "Account auto update", this.accounts[i].getBalance()*this.interest_rate));
 		}
 	}
 	
