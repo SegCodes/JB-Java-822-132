@@ -62,17 +62,18 @@ public abstract class Client {
 	
 	public void removeAccount(Account a) {
 		for(int i = 0; i < this.accounts.length; i++) {
-			if(this.accounts[i].equals(a.getId())) {
+			if(this.accounts[i].equals(a.getId()) && this.accounts[i] != null) {
 				Logger.log(new Log(System.currentTimeMillis(), this.id, "Account removed", a.getBalance()));
 				this.balance += a.getBalance();
 				this.accounts[i] = null;
-				break;
+				return;
 			}
 		}
+		System.out.println("Account removal failed - No account with ID: " + a.getId() + "was found.");
 	}
 	
 	public void deposit(float amount) {
-		this.balance += amount - amount * this.commission_rate; 
+		this.balance += amount - amount * this.commission_rate;
 	}
 	
 	public void withdraw(float amount) {
@@ -82,15 +83,19 @@ public abstract class Client {
 	
 	public void autoUpdateAccounts() {
 		for(int i = 0; i < this.accounts.length; i++) {
-			this.accounts[i].setBalance(this.accounts[i].getBalance()*(1+this.interest_rate));
-			Logger.log(new Log(System.currentTimeMillis(), this.id, "Account auto update", this.accounts[i].getBalance()*this.interest_rate));
+			if(accounts[i] != null) {
+				this.accounts[i].setBalance(this.accounts[i].getBalance()*(1+this.interest_rate));
+				Logger.log(new Log(System.currentTimeMillis(), this.id, "Account auto update", this.accounts[i].getBalance()*this.interest_rate));				
+			}
 		}
 	}
 	
 	public float getFortune() {
-		float sum = 0;
+		float sum = getBalance();
 		for(int i = 0; i < this.accounts.length; i++) {
-			sum += this.accounts[i].getBalance();
+			if(this.accounts[i] != null) {				
+				sum += this.accounts[i].getBalance();
+			}
 		}
 		return sum + this.balance;
 	}
