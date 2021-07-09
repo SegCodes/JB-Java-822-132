@@ -5,7 +5,6 @@ public class Exe2 {
 	public static void main(String[] args) {
 
 		int[] arr = new int[50];
-		arr[0] = (int)(Math.random()*101);
 		int max = 0;
 		int ind = 0;
 		
