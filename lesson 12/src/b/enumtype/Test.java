@@ -14,7 +14,8 @@ public class Test {
 		System.out.println("Orbit: " + planet.getOrbit());
 		System.out.println("Mass: " + planet.getMass());
 		System.out.println("Type: " + planet.getType());
-
+		
+		sc.close();
 	}
 
 }
