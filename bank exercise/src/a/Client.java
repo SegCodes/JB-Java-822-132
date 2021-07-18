@@ -44,7 +44,7 @@ public abstract class Client {
 		for(int i = 0; i < this.accounts.length; i++) {
 			if(this.accounts[i] == null) {
 				this.accounts[i] = a;
-				Logger.log(new Log(System.currentTimeMillis(),this.id, "Account added", a.getBalance()));
+				Logger.log(new Log(System.currentTimeMillis(), this.id, "Account added", a.getBalance()));
 				return;
 			}
 		}
@@ -72,13 +72,17 @@ public abstract class Client {
 		System.out.println("Account removal failed - No account with ID: " + a.getId() + "was found.");
 	}
 	
-	public void deposit(float amount) {
+	public void deposit(float amount) throws WithrawException {
 		this.balance += amount - amount * this.commission_rate;
 	}
 	
-	public void withdraw(float amount) {
-		this.balance -= amount + amount * this.commission_rate;
-		Bank.addCommission(amount * this.commission_rate);
+	public void withdraw(float amount) throws WithrawException {
+		if(amount > this.balance) {			
+			this.balance -= amount + amount * this.commission_rate;
+			Bank.addCommission(amount * this.commission_rate);
+		} else {
+			throw new WithrawException("Balance too low.", this.id, this.balance, amount); 
+		}
 	}
 	
 	public void autoUpdateAccounts() {
