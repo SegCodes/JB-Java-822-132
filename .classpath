@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="bank exercise/src"/>
+	<classpathentry kind="src" path="collection exercise/src"/>
+	<classpathentry kind="src" path="java basics exercises/src"/>
+	<classpathentry kind="src" path="JB Online - Basic Java/src"/>
+	<classpathentry kind="src" path="lesson 01/src"/>
+	<classpathentry kind="src" path="lesson 02 identifiers keywords and types/src"/>
+	<classpathentry kind="src" path="lesson 02/src"/>
+	<classpathentry kind="src" path="lesson 03 expressions and flow controll/src"/>
+	<classpathentry kind="src" path="lesson 04/src"/>
+	<classpathentry kind="src" path="lesson 05 exam/src"/>
+	<classpathentry kind="src" path="lesson 06 arrays/src"/>
+	<classpathentry kind="src" path="lesson 07/src"/>
+	<classpathentry kind="src" path="lesson 08/src"/>
+	<classpathentry kind="src" path="lesson 09 class design/src"/>
+	<classpathentry kind="src" path="lesson 09 exercise/src"/>
+	<classpathentry kind="src" path="lesson 10 advanced class features/src"/>
+	<classpathentry kind="src" path="lesson 11 advanced class features/src"/>
+	<classpathentry kind="src" path="lesson 12/src"/>
+	<classpathentry kind="src" path="lesson 13 exceptions/src"/>
+	<classpathentry kind="src" path="lesson 14 collections/src"/>
+	<classpathentry kind="src" path="lesson 15 collections sort/src"/>
+	<classpathentry kind="src" path="lesson 16 latest syntax/src"/>
+	<classpathentry kind="src" path="lesson 17 input output/src"/>
+	<classpathentry kind="src" path="Maze_Runner-master"/>
+	<classpathentry kind="src" path="OOP_Task/src"/>
+	<classpathentry kind="src" path="Sagiv Maze Runner/src"/>
+	<classpathentry kind="src" path="Store/src"/>
+	<classpathentry kind="output" path="JB Online - Basic Java/bin"/>
+</classpath>
