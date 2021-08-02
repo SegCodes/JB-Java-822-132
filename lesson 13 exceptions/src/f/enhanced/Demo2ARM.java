@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package f.enhanced;
 
 import java.util.Scanner;
