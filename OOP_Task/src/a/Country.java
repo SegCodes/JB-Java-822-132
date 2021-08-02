@@ -17,7 +17,7 @@ public class Country {
 				return;
 			}
 		}
-		throw new Exception("Error: spot already full.");
+		throw new Exception("Error: Country is full.");
 	}
 
 	public void removeHighway(String name) throws Exception {

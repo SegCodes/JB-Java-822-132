@@ -73,7 +73,6 @@ public class Demo {
 		Highway highway2 = getFastestHighway(country);
 		System.out.println("Most fastest highway: " + highway2.getName() + " Highway with speed of " + getAverageHighwaySpeed(highway2));
 		
-		
 	}
 	
 	public static int getCountryCars(Country c) {
