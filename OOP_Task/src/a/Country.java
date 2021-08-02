@@ -9,6 +9,7 @@ public class Country {
 	public Highway[] getHighways() {
 		return highways;
 	}
+<<<<<<< Upstream, based on origin/master
 	
 	public void addHighway(Highway h) throws Exception {
 		for(int i = 0; i < highways.length; i++) {			
@@ -28,6 +29,14 @@ public class Country {
 			}
 		}
 		throw new Exception("Error: Highway not found.");
+=======
+	public void addHighway(int index, Highway h) throws Exception {
+		if(highways[index] == null) {			
+			highways[index] = h;
+		} else {
+			throw new Exception("Error: spot already full.");
+		}
+>>>>>>> fd2056e All Lessons thus far.
 	}
 
 	@Override

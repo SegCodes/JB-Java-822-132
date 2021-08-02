@@ -1,5 +1,6 @@
 package a;
 
+<<<<<<< Upstream, based on origin/master
 public class Demo {
 
 	public static void main(String[] args) {
@@ -94,6 +95,111 @@ public class Demo {
 			if(car != null) {
 				count++; 
 			}			
+=======
+import java.util.*;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		
+		Country country = new Country();
+		
+		Highway h1 = new Highway("James");
+		try {
+			h1.addCar(0, new Car(1, 50));
+			h1.addCar(1, new Car(2, 120));			
+			h1.addCar(2, new Car(3, -1));
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		Highway h2 = new Highway("Frank");
+		try {
+			h2.addCar(0, new FamilyCar(4, 70));
+			h2.addCar(1, new FamilyCar(5, 130));			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		Highway h3 = new Highway("Teddy");
+		try {
+			h3.addCar(1, new SportsCar(8, 180));			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		try {			
+			country.addHighway(0, h1);
+			country.addHighway(1, h2);
+			country.addHighway(2, h3);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		for(int i = 0; i < country.getHighways().length; i++) {
+			if(country.getHighways()[i] == null) {
+				break;
+			}
+			
+			System.out.println(country.getHighways()[i]);
+		}
+		
+		System.out.println();
+		
+		System.out.println("Total cars in country: " + getCountryCars(country));
+		System.out.println("===================");
+		
+		for(int i = 0; i < country.getHighways().length; i++) {	
+			if(country.getHighways()[i] == null) {
+				break;
+			}
+			System.out.println("Total cars in " + country.getHighways()[i].getName() + " Highway: " + getHighwayCars(country.getHighways()[i]));
+		}
+		System.out.println("===================");
+		
+		System.out.println("Average speed in country: " + getAverageSpeed(country));
+		System.out.println("===================");
+
+		System.out.println("Max speed in country: " + getMaxSpeed(country));
+		System.out.println("===================");
+		
+		
+		Highway highway = getMostDenseHighway(country);
+		System.out.println("Most densest highway: " +  highway.getName() + " Highway with " + getHighwayCars(highway) + " cars.");
+		System.out.println("===================");
+		
+		Highway highway2 = getFastestHighway(country);
+		System.out.println("Most fastest highway: " + highway2.getName() + " Highway with speed of " + getAverageHighwaySpeed(highway2));
+		
+		
+	}
+	
+	public static int getCountryCars(Country c) {
+		int count = 0;
+		
+		for(int i = 0; i < c.getHighways().length; i++) {
+			
+			if(c.getHighways()[i] == null) {
+				break;
+			}
+				
+				count += getHighwayCars(c.getHighways()[i]);
+			}
+		
+		return count;
+	}
+	
+	public static int getHighwayCars(Highway h) {
+		int count = 0;
+		
+		for(int i = 0; i < h.getCars().length; i++) {
+			
+			if(h.getCars()[i] == null) {
+				break;
+			}
+			
+			count++; 
+>>>>>>> fd2056e All Lessons thus far.
 		}
 		
 		return count;

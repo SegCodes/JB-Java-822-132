@@ -15,6 +15,7 @@ public class Highway {
 		this.name = name;
 	}
 	
+<<<<<<< Upstream, based on origin/master
 	public void addCar(Car c) throws Exception {
 		for(int i = 0; i < cars.length; i++) {			
 			if(cars[i] == null) {			
@@ -33,6 +34,14 @@ public class Highway {
 			}
 		}
 		throw new Exception("Error: Car not found.");
+=======
+	public void addCar(int index, Car c) throws Exception {
+		if(cars[index] == null) {			
+			cars[index] = c;
+		} else {
+			throw new Exception("Error: spot already full.");
+		}
+>>>>>>> fd2056e All Lessons thus far.
 	}
 	
 	public String getName() {
