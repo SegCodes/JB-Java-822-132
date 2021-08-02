@@ -1,7 +1,5 @@
 package a;
 
-import java.util.*;
-
 public class Demo {
 
 	public static void main(String[] args) {
@@ -10,32 +8,32 @@ public class Demo {
 		
 		Highway h1 = new Highway("James");
 		try {
-			h1.addCar(0, new Car(1, 50));
-			h1.addCar(1, new Car(2, 120));			
-			h1.addCar(2, new Car(3, -1));
+			h1.addCar(new Car(1, 50));
+			h1.addCar(new Car(2, 120));			
+			h1.addCar(new Car(3, -1));
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 		
 		Highway h2 = new Highway("Frank");
 		try {
-			h2.addCar(0, new FamilyCar(4, 70));
-			h2.addCar(1, new FamilyCar(5, 130));			
+			h2.addCar(new FamilyCar(4, 70));
+			h2.addCar(new FamilyCar(5, 130));			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 		
 		Highway h3 = new Highway("Teddy");
 		try {
-			h3.addCar(1, new SportsCar(8, 180));			
+			h3.addCar(new SportsCar(8, 180));			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 		
 		try {			
-			country.addHighway(0, h1);
-			country.addHighway(1, h2);
-			country.addHighway(2, h3);
+			country.addHighway(h1);
+			country.addHighway(h2);
+			country.addHighway(h3);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -81,14 +79,11 @@ public class Demo {
 	public static int getCountryCars(Country c) {
 		int count = 0;
 		
-		for(int i = 0; i < c.getHighways().length; i++) {
-			
-			if(c.getHighways()[i] == null) {
-				break;
-			}
-				
-				count += getHighwayCars(c.getHighways()[i]);
-			}
+		for(Highway highway : c.getHighways()) {	
+			if(highway != null) {
+				count += getHighwayCars(highway);
+			}		
+		}
 		
 		return count;
 	}
@@ -96,13 +91,10 @@ public class Demo {
 	public static int getHighwayCars(Highway h) {
 		int count = 0;
 		
-		for(int i = 0; i < h.getCars().length; i++) {
-			
-			if(h.getCars()[i] == null) {
-				break;
-			}
-			
-			count++; 
+		for(Car car: h.getCars()) {	
+			if(car != null) {
+				count++; 
+			}			
 		}
 		
 		return count;

@@ -9,12 +9,25 @@ public class Country {
 	public Highway[] getHighways() {
 		return highways;
 	}
-	public void addHighway(int index, Highway h) throws Exception {
-		if(highways[index] == null) {			
-			highways[index] = h;
-		} else {
-			throw new Exception("Error: spot already full.");
+	
+	public void addHighway(Highway h) throws Exception {
+		for(int i = 0; i < highways.length; i++) {			
+			if(highways[i] == null) {			
+				highways[i] = h;
+				return;
+			}
 		}
+		throw new Exception("Error: spot already full.");
+	}
+
+	public void removeHighway(String name) throws Exception {
+		for(int i = 0; i < highways.length; i++) {			
+			if(highways[i] != null && highways[i].getName().equals(name)) {			
+				highways[i] = null;
+				return;
+			}
+		}
+		throw new Exception("Error: Highway not found.");
 	}
 
 	@Override

@@ -2,6 +2,8 @@ package a;
 
 public class Car {
 	
+	public static final int MAX_SPEED = 110;
+	public static final int MIN_SPEED = 0;
 	private int number;
 	private int speed;
 	
@@ -11,11 +13,7 @@ public class Car {
 
 	public Car(int number, int speed) {
 		this.number = number;
-		if(speed >= 0 && speed <= 110) {
-			this.speed = speed;
-		} else {
-			this.speed = (int)(Math.random()*111);
-		}
+		setSpeed(speed);
 	}
 
 	public int getNumber() {
@@ -31,7 +29,11 @@ public class Car {
 	}
 
 	public void setSpeed(int speed) {
-		this.speed = speed;
+		if(speed >= MIN_SPEED && speed <= MAX_SPEED) {
+			this.speed = speed;
+		} else {
+			this.speed = (int)(Math.random()*111);
+		}
 	}
 
 	@Override

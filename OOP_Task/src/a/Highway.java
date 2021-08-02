@@ -15,12 +15,24 @@ public class Highway {
 		this.name = name;
 	}
 	
-	public void addCar(int index, Car c) throws Exception {
-		if(cars[index] == null) {			
-			cars[index] = c;
-		} else {
-			throw new Exception("Error: spot already full.");
+	public void addCar(Car c) throws Exception {
+		for(int i = 0; i < cars.length; i++) {			
+			if(cars[i] == null) {			
+				cars[i] = c;
+				return;
+			}
 		}
+		throw new Exception("Error: Highway is full.");
+	}
+
+	public void removeCar(int carNumber) throws Exception {
+		for(int i = 0; i < cars.length; i++) {			
+			if(cars[i] != null && cars[i].getNumber() == carNumber) {			
+				cars[i] = null;
+				return;
+			}
+		}
+		throw new Exception("Error: Car not found.");
 	}
 	
 	public String getName() {
