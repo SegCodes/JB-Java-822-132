@@ -16,6 +16,7 @@ public class Highway {
 	}
 	
 <<<<<<< Upstream, based on origin/master
+<<<<<<< Upstream, based on origin/master
 	public void addCar(Car c) throws Exception {
 		for(int i = 0; i < cars.length; i++) {			
 			if(cars[i] == null) {			
@@ -40,8 +41,30 @@ public class Highway {
 			cars[index] = c;
 		} else {
 			throw new Exception("Error: spot already full.");
+=======
+	public void addCar(Car c) throws Exception {
+		for(int i = 0; i < cars.length; i++) {			
+			if(cars[i] == null) {			
+				cars[i] = c;
+				return;
+			}
+>>>>>>> 2904016 Updated code.
 		}
+<<<<<<< Upstream, based on origin/master
 >>>>>>> fd2056e All Lessons thus far.
+=======
+		throw new Exception("Error: Highway is full.");
+	}
+
+	public void removeCar(int carNumber) throws Exception {
+		for(int i = 0; i < cars.length; i++) {			
+			if(cars[i] != null && cars[i].getNumber() == carNumber) {			
+				cars[i] = null;
+				return;
+			}
+		}
+		throw new Exception("Error: Car not found.");
+>>>>>>> 2904016 Updated code.
 	}
 	
 	public String getName() {

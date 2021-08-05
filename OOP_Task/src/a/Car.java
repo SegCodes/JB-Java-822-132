@@ -3,6 +3,7 @@ package a;
 public class Car {
 	
 <<<<<<< Upstream, based on origin/master
+<<<<<<< Upstream, based on origin/master
 	public static final int MAX_SPEED = 110;
 	public static final int MIN_SPEED = 0;
 	private int number;
@@ -36,6 +37,10 @@ public class Car {
 			this.speed = (int)(Math.random()*111);
 		}
 =======
+=======
+	public static final int MAX_SPEED = 110;
+	public static final int MIN_SPEED = 0;
+>>>>>>> 2904016 Updated code.
 	private int number;
 	private int speed;
 	
@@ -45,11 +50,7 @@ public class Car {
 
 	public Car(int number, int speed) {
 		this.number = number;
-		if(speed >= 0 && speed <= 110) {
-			this.speed = speed;
-		} else {
-			this.speed = (int)(Math.random()*111);
-		}
+		setSpeed(speed);
 	}
 
 	public int getNumber() {
@@ -65,8 +66,16 @@ public class Car {
 	}
 
 	public void setSpeed(int speed) {
+<<<<<<< Upstream, based on origin/master
 		this.speed = speed;
 >>>>>>> fd2056e All Lessons thus far.
+=======
+		if(speed >= MIN_SPEED && speed <= MAX_SPEED) {
+			this.speed = speed;
+		} else {
+			this.speed = (int)(Math.random()*111);
+		}
+>>>>>>> 2904016 Updated code.
 	}
 
 	@Override

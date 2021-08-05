@@ -1,3 +1,4 @@
+<<<<<<< Upstream, based on origin/master
 <<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
@@ -35,3 +36,42 @@
 	</natures>
 </projectDescription>
 >>>>>>> branch 'master' of https://github.com/SegCodes/JB-Java-822-132
+=======
+<<<<<<< HEAD
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>collection exercise</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+</projectDescription>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>collection exercise</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+</projectDescription>
+>>>>>>> branch 'master' of https://github.com/SegCodes/JB-Java-822-132
+>>>>>>> 2904016 Updated code.
