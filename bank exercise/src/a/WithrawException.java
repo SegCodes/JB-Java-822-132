@@ -1,8 +1,8 @@
-<<<<<<< Upstream, based on origin/master
 package a;
 
 public class WithrawException extends Exception {
 	
+	private static final long serialVersionUID = 1L;
 	private int clientId;
 	private float currentBalance;
 	private float withrawAmount;
@@ -25,34 +25,4 @@ public class WithrawException extends Exception {
 	public float getWithrawAmount() {
 		return withrawAmount;
 	}
-	
-=======
-package a;
-
-public class WithrawException extends Exception {
-	
-	private int clientId;
-	private float currentBalance;
-	private float withrawAmount;
-	
-	public WithrawException(String message, int clientId, float currentBalance, float withrawAmount) {
-		super(message);
-		this.clientId = clientId;
-		this.currentBalance = currentBalance;
-		this.withrawAmount = withrawAmount;
-	}
-
-	public int getClientId() {
-		return clientId;
-	}
-
-	public float getCurrentBalance() {
-		return currentBalance;
-	}
-
-	public float getWithrawAmount() {
-		return withrawAmount;
-	}
-	
->>>>>>> 2904016 Updated code.
 }
